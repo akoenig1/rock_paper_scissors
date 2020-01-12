@@ -14,36 +14,41 @@
             }
 
             function playRound(playerSelection, computerSelection) {
-                if(playerSelection.toUpperCase() == computerSelection.toUpperCase()) {
-                    return "You both played " + computerSelection + ". It's a draw!"
+                if(playerSelection.toUpperCase() == "ROCK" || playerSelection.toUpperCase() == "PAPER" || playerSelection.toUpperCase() == "SCISSORS") {
+                    if(playerSelection.toUpperCase() == computerSelection.toUpperCase()) {
+                        return "You both played " + computerSelection + ". It's a draw!"
+                    }
+                    else {
+                        switch (playerSelection.toUpperCase()) {
+                            case 'ROCK':
+                                if (computerSelection.toUpperCase() == 'SCISSORS') {
+                                    return 'Rock smashes Scissors - you win!';
+                                }
+                                else {
+                                    return 'Paper covers Rock - computer wins.';
+                                }
+                                break;
+                            case 'PAPER':
+                                if (computerSelection.toUpperCase() == 'ROCK') {
+                                    return 'Paper covers Rock - you win!';
+                                }
+                                else {
+                                    return 'Scissors cuts Paper - computer wins.';
+                                }
+                                break;
+                            case 'SCISSORS':
+                                if (computerSelection.toUpperCase() == 'PAPER') {
+                                    return 'Scissors cuts Paper - you win!';
+                                }
+                                else {
+                                    return 'Rock smashes Scissors - computer wins.';
+                                }
+                                break;
+                        }
+                    }
                 }
                 else {
-                    switch (playerSelection.toUpperCase()) {
-                        case 'ROCK':
-                            if (computerSelection.toUpperCase() == 'SCISSORS') {
-                                return 'Rock smashes Scissors - you win!';
-                            }
-                            else {
-                                return 'Paper covers Rock - computer wins.';
-                            }
-                            break;
-                        case 'PAPER':
-                            if (computerSelection.toUpperCase() == 'ROCK') {
-                                return 'Paper covers Rock - you win!';
-                            }
-                            else {
-                                return 'Scissors cuts Paper - computer wins.';
-                            }
-                            break;
-                        case 'SCISSORS':
-                            if (computerSelection.toUpperCase() == 'PAPER') {
-                                return 'Scissors cuts Paper - you win!';
-                            }
-                            else {
-                                return 'Rock smashes Scissors - computer wins.';
-                            }
-                            break;
-                    }
+                    return 'Invalid option. Please enter Rock, Paper, or Scissors.';
                 }
             }
         </script>
