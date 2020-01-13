@@ -7,48 +7,99 @@
     <body>
         <script>
 
+            function game() {
+                let playerScore = 0;
+                let computerScore = 0;
+                let result;
+                
+                // Play 5 rounds and keep track of score
+                for(let i = 0; i < 5; i++) {
+                    result = playRound(prompt('Rock, Paper, or Scissors?'), computerPlay())
+                    switch(result) {
+                        case 'draw':
+                            break;
+                        case 'player':
+                            playerScore += 1;
+                            break;
+                        case 'computer':
+                            computerScore += 1;
+                            break;
+                        // If player input is invalid, replay the round
+                        case 'invalid':
+                            i--;
+                            break;
+                    }
+                }
+
+                // Compare player score to computer score to determine winner of the game
+                if (playerScore > computerScore) {
+                    console.log(`Congrats! You won by a score of ${playerScore} to ${computerScore}`);
+                }
+                else if (computerScore > playerScore) {
+                    console.log(`Rough. You lost by a score of ${computerScore} to ${playerScore}. Better luck next time!`);
+                }
+                else {
+                    console.log(`It's a draw! ${playerScore} - ${computerScore}`);
+                }
+
+                return;
+            }
+
+            // Randomly select a hand for the computer to play
             function computerPlay() {
                 let choices = ['Rock', 'Paper', 'Scissors'];
                 let computerChoice = Math.floor(Math.random()*choices.length);
                 return choices[computerChoice];
             }
 
+            // Compare user selection to computer selection and determine a result
             function playRound(playerSelection, computerSelection) {
+                // Filter out invalid input
                 if(playerSelection.toUpperCase() == "ROCK" || playerSelection.toUpperCase() == "PAPER" || playerSelection.toUpperCase() == "SCISSORS") {
+                    // If player selection is equal to computer selection => draw
                     if(playerSelection.toUpperCase() == computerSelection.toUpperCase()) {
-                        return "You both played " + computerSelection + ". It's a draw!"
+                        console.log("You both played " + computerSelection + ". It's a draw!");
+                        return 'draw';
                     }
+                    // Otherwise compare the two unique selections to determine a winner
                     else {
                         switch (playerSelection.toUpperCase()) {
                             case 'ROCK':
                                 if (computerSelection.toUpperCase() == 'SCISSORS') {
-                                    return 'Rock smashes Scissors - you win!';
+                                    console.log('Rock smashes Scissors - you win!');
+                                    return 'player';
                                 }
                                 else {
-                                    return 'Paper covers Rock - computer wins.';
+                                    console.log('Paper covers Rock - computer wins.');
+                                    return 'computer';
                                 }
                                 break;
                             case 'PAPER':
                                 if (computerSelection.toUpperCase() == 'ROCK') {
-                                    return 'Paper covers Rock - you win!';
+                                    console.log('Paper covers Rock - you win!');
+                                    return 'player';
                                 }
                                 else {
-                                    return 'Scissors cuts Paper - computer wins.';
+                                    console.log('Scissors cuts Paper - computer wins.');
+                                    return 'computer';
                                 }
                                 break;
                             case 'SCISSORS':
                                 if (computerSelection.toUpperCase() == 'PAPER') {
-                                    return 'Scissors cuts Paper - you win!';
+                                    console.log('Scissors cuts Paper - you win!');
+                                    return 'player';
                                 }
                                 else {
-                                    return 'Rock smashes Scissors - computer wins.';
+                                    console.log('Rock smashes Scissors - computer wins.');
+                                    return 'computer';
                                 }
                                 break;
                         }
                     }
                 }
                 else {
-                    return 'Invalid option. Please enter Rock, Paper, or Scissors.';
+                    console.log('Invalid option. Please enter Rock, Paper, or Scissors.');
+                    return 'invalid';
                 }
             }
         </script>
