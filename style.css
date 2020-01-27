@@ -1,0 +1,216 @@
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1 {
+    color: rgb(50, 50, 50);
+    text-align: center;
+    width: 100%;
+    font-size: 36px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 28px;
+    text-decoration: underline;
+}
+
+button:focus {
+    outline: 0;
+}
+
+#reset-buttons {
+    display: inline-flex;
+    width: 100%;
+    float: none;
+    margin: 20px auto;
+    justify-content: center;
+}
+
+#reset-buttons button {
+    margin: 5px 20px;
+    padding: 10px 10px;
+    font-size: large;
+    border: 3px solid rgb(50, 50, 50);
+    border-radius: 10px;
+    background-color: rgb(39, 71, 179);
+    color: #fff;
+    text-align: center;
+    width: 150px;
+}
+
+#reset-buttons button:hover {
+    background-color: #fff;
+    color: rgb(39, 71, 179);
+    transition: all, 0.3s;
+    cursor: pointer;
+}
+
+#selections {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#user-side {
+    float: none;
+    margin: 20px auto;
+    justify-content: center;
+}
+
+#user-selections {
+    display: inline-flex;
+}
+
+#user-buttons {
+    margin: auto;
+}
+
+#user-image-container {
+    float: right;
+}
+
+.choice-image {
+    height: 225px;
+    width: 225px;
+}
+
+#computer-side {
+    float: none;
+    margin: 20px auto;
+    justify-content: center;
+}
+
+#computer-selections {
+    display: inline-flex;
+}
+
+#computer-buttons {
+    margin: auto;
+}
+
+#computer-image-container {
+    float: left;
+}
+
+#computer-image {
+    transform: scaleX(-1);
+}
+
+.choice-button {
+    display: block;
+    width: 120px;
+    height: 46px;
+    margin: 5px 20px;
+    padding: 10px 10px;
+    font-size: large;
+    border: 3px solid rgb(50, 50, 50);
+    border-radius: 10px;
+    background-color: rgb(29, 100, 11);
+    color: #fff;
+    text-align: center;
+}
+
+.choice-button-selected {
+    display: block;
+    width: 120px;
+    height: 46px;
+    margin: 5px 20px;
+    padding: 10px 10px;
+    font-size: large;
+    border: 3px solid rgb(50, 50, 50);
+    border-radius: 10px;
+    background-color: rgb(50, 50, 50);
+    color: #fff;
+    text-align: center;
+}
+
+.choice-button:hover {
+    background-color: #fff;
+    color: rgb(29, 100, 11);
+    transition: all, 0.3s;
+    cursor: pointer;
+}
+
+.choice-button-selected:hover {
+    background-color: #fff;
+    color: rgb(50, 50, 50);
+    transition: all, 0.3s;
+    cursor: pointer;
+}
+
+.choice-div {
+    width: 74px;
+    margin: 5px 20px;
+    padding: 10px 20px;
+    font-size: large;
+    border: 3px solid rgb(50, 50, 50);
+    border-radius: 10px;
+    background-color: rgb(212, 43, 14);
+    color: #fff;
+    text-align: center;
+}
+
+.choice-div-selected {
+    background-color: rgb(50, 50, 50);
+    color: #fff;
+}
+
+.choice-image {
+    display: block;
+    float: right;
+}
+
+#scoreboard {
+    display: inline-flex;
+    width: 100%;
+    float: none;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.score {  
+    display: inline-flex;
+    justify-content: center;
+    width: 100%; 
+}
+
+.score p {
+    height: 30px;
+    margin: 40px;
+    padding: 15px;
+    border: 3px solid rgb(50, 50, 50); 
+    justify-content: center;
+    text-align: center;
+    width: 30px;
+    font-size: 24px;
+}
+
+#playerScore {
+    color: rgb(29, 100, 11);
+}
+
+#computerScore {
+    color: rgb(212, 43, 14);
+}
+
+#game-result {
+    display: inline-flex;
+    width: 100%;
+    float: none;
+    margin: 0 auto;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+#round-result {
+    display: inline-flex;
+    width: 100%;
+    float: none;
+    margin: 0 auto;
+    justify-content: center;
+}
